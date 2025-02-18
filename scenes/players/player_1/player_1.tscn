@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://u6nbfsw4rvvv"]
+
+[ext_resource type="Script" path="res://scenes/players/player_1/player_1.gd" id="1_xlg44"]
+[ext_resource type="Resource" uid="uid://jy8gwklyxe25" path="res://data/player_input/player_1_input.tres" id="2_te4h0"]
+[ext_resource type="Texture2D" uid="uid://mqrspxyghq1c" path="res://assets/placeholder/characters/idle/ChikBoy_idle.png" id="3_xbxcj"]
+[ext_resource type="Script" path="res://scenes/players/player_controller.gd" id="4_o0kqd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6da6"]
+atlas = ExtResource("3_xbxcj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8djf"]
+atlas = ExtResource("3_xbxcj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je7dp"]
+atlas = ExtResource("3_xbxcj")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qagck"]
+atlas = ExtResource("3_xbxcj")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfump"]
+atlas = ExtResource("3_xbxcj")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eka6l"]
+atlas = ExtResource("3_xbxcj")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjdbs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6da6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8djf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je7dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qagck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfump")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eka6l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5y72"]
+size = Vector2(10, 23.0186)
+
+[node name="Player-1" type="CharacterBody2D"]
+scale = Vector2(2.7, 2.7)
+collision_layer = 2
+script = ExtResource("1_xlg44")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16.1111)
+sprite_frames = SubResource("SpriteFrames_mjdbs")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.751683
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.6491e-07, -11.4537)
+shape = SubResource("RectangleShape2D_r5y72")
+
+[node name="PlayerController" type="Node" parent="." node_paths=PackedStringArray("Player", "PlayerSprite", "PlayerCollider")]
+script = ExtResource("4_o0kqd")
+actions = ExtResource("2_te4h0")
+Player = NodePath("..")
+PlayerSprite = NodePath("../AnimatedSprite2D")
+PlayerCollider = NodePath("../CollisionShape2D")
+maxSpeed = 120.0
+timeToReachMaxSpeed = 0.3
+jumpHeight = 2.5
+jumps = 1
+gravityScale = 8.0
+terminalVelocity = 505.0
+descendingGravityFactor = 1.8
+jumpVariable = 3.0
+wallJump = true
+inputPauseAfterWallJump = 0.25
+wallKickAngle = 80.0
+wallSliding = 4.0
+wallLatching = true
+wallLatchingModifer = true
+dashType = 4
+dashLength = 3.7

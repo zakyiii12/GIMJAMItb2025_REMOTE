@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlayerInputResource" load_steps=2 format=3 uid="uid://jy8gwklyxe25"]
+
+[ext_resource type="Script" path="res://components/player_input_resource.gd" id="1_bj6p7"]
+
+[resource]
+script = ExtResource("1_bj6p7")
+right = &"right_p1"
+left = &"left_p1"
+up = &"up_p1"
+down = &"down_p1"
+jump = &"jump_p1"
+dash = &"dash_p1"
+roll = &"roll_p1"
+latch = &"latch_p1"
+twirl = &"down_p1"
+run = &"run_p1"
