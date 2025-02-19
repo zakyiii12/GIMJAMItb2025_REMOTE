@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://b7fn277q5bl8n"]
+
+[ext_resource type="Texture2D" uid="uid://lbu1skmtagfe" path="res://assets/blacksmith/Idle Working.png" id="1_37nbg"]
+[ext_resource type="Script" path="res://scenes/blacksmith/blacksmith.gd" id="1_nc8ky"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe04g"]
+atlas = ExtResource("1_37nbg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxjtd"]
+atlas = ExtResource("1_37nbg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_niass"]
+atlas = ExtResource("1_37nbg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baisx"]
+atlas = ExtResource("1_37nbg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcgwc"]
+atlas = ExtResource("1_37nbg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gib86"]
+atlas = ExtResource("1_37nbg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80j4m"]
+atlas = ExtResource("1_37nbg")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4rvn"]
+atlas = ExtResource("1_37nbg")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lpmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe04g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxjtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_niass")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baisx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcgwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gib86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80j4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4rvn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwpwt"]
+radius = 94.2603
+
+[node name="Blacksmith" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_nc8ky")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_5lpmx")
+autoplay = "default"
+frame_progress = 0.0718384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bwpwt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bkp0gna2taagk" path="res://scenes/components/hitbox.tscn" id="6_bd36s"]
 [ext_resource type="Texture2D" uid="uid://bo1qkrkkafn7a" path="res://assets/ui/Emote.png" id="6_jewlo"]
 [ext_resource type="PackedScene" uid="uid://ivuenv50bi35" path="res://scenes/components/player_detection_zone.tscn" id="7_cv1r5"]
-[ext_resource type="Script" path="res://components/state_machine.gd" id="7_m05us"]
+[ext_resource type="Script" path="res://components/state_machine/state_machine.gd" id="7_m05us"]
 [ext_resource type="Script" path="res://scenes/enemies/bat/idle.gd" id="9_n8ivj"]
 [ext_resource type="Script" path="res://scenes/enemies/bat/wander.gd" id="10_tjr1e"]
 [ext_resource type="Script" path="res://scenes/enemies/bat/attack.gd" id="11_xpocp"]

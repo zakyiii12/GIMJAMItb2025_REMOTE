@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cm0ger1kw5j18"]
+
+[ext_resource type="Texture2D" uid="uid://dmkhoh4v17bmy" path="res://assets/props/guns/AK 47 [96x48].png" id="1_3tieb"]
+
+[resource]
+atlas = ExtResource("1_3tieb")

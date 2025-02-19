@@ -40,3 +40,10 @@ func _on_body_entered(_body):
 	if not destroyed:
 		AudioManager.play_sound(AudioManager.BULLET)
 		destroyed = true
+
+
+func _on_area_entered(area: Area2D) -> void:
+	die()
+	if not destroyed:
+		AudioManager.play_sound(AudioManager.BULLET)
+		destroyed = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c6dl8ag8yhskq"]
 
-[ext_resource type="Texture2D" uid="uid://6cxxi2kvj03y" path="res://assets/props/bullets/Bullet.png" id="1_5a6n0"]
+[ext_resource type="Texture2D" uid="uid://6cxxi2kvj03y" path="res://assets/bullets/Bullet.png" id="1_5a6n0"]
 [ext_resource type="Script" path="res://scenes/bullets/bullet.gd" id="1_r7pj2"]
 [ext_resource type="PackedScene" uid="uid://bkp0gna2taagk" path="res://scenes/components/hitbox.tscn" id="3_5214q"]
 
@@ -55,11 +55,11 @@ texture = ExtResource("1_5a6n0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(-8.34465e-08, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_81kun")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(2, 0)
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(26.6667, 0.5)
 emitting = false
 amount = 32
 process_material = SubResource("ParticleProcessMaterial_0ksfr")
@@ -84,9 +84,9 @@ damage = 1
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 visible = false
 position = Vector2(-7.15256e-08, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bca47")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="CollisionTimer" to="." method="_on_collision_timer_timeout"]
 [connection signal="timeout" from="NoCollisionTimer" to="." method="_on_no_collision_timer_timeout"]

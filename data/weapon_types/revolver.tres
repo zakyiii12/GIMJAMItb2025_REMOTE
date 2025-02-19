@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=7 format=3 uid="uid://dukklb56xm3iw"]
+
+[ext_resource type="PackedScene" uid="uid://c6dl8ag8yhskq" path="res://scenes/bullets/bullet.tscn" id="1_27uv5"]
+[ext_resource type="PackedScene" uid="uid://2ehuxu8vyhe3" path="res://scenes/particles/muzzle.tscn" id="2_iewac"]
+[ext_resource type="Script" path="res://components/weapon_resources.gd" id="3_wi4uw"]
+[ext_resource type="PackedScene" uid="uid://dr4mlmfv8ndbv" path="res://scenes/particles/player_death_particle.tscn" id="4_g4nwo"]
+[ext_resource type="AudioStream" uid="uid://04kmivmfd7sc" path="res://audio/Sounds/revolver_sfx.wav" id="5_8naux"]
+[ext_resource type="Texture2D" uid="uid://qs8ba0cee5hv" path="res://data/weapon_sprites/revolver.tres" id="6_uhlhf"]
+
+[resource]
+script = ExtResource("3_wi4uw")
+weapon_type = 1
+damage = 1
+fire_rate = 0.4
+reload_time = 1.0
+magazine_size = 6
+max_ammo = 36
+accuracy = 0.95
+recoil = Vector2(500, 15)
+bullet_speed = 1000.0
+camera_shake_intensity = 0.14
+weapon_sprite = ExtResource("6_uhlhf")
+muzzle_flash_scene = ExtResource("2_iewac")
+bullet_scene = ExtResource("1_27uv5")
+shell_scene = ExtResource("4_g4nwo")
+shoot_sound = ExtResource("5_8naux")

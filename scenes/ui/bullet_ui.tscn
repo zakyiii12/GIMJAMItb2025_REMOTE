@@ -13,23 +13,29 @@ scale = Vector2(0.8, 0.8)
 mouse_filter = 2
 script = ExtResource("1_uk8y2")
 
-[node name="Slot" type="TextureRect" parent="."]
+[node name="Slot" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 1
-offset_right = 24.0
+offset_right = 88.0
 offset_bottom = 24.0
 scale = Vector2(0.5, 0.5)
-stretch_mode = 4
 
 [node name="Label" type="Label" parent="Slot"]
-layout_mode = 1
-offset_right = 164.0
-offset_bottom = 105.0
-scale = Vector2(0.1, 0.1)
+layout_mode = 2
 theme_override_colors/font_color = Color(0.972549, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
-theme_override_font_sizes/font_size = 140
-text = "x 30"
+theme_override_font_sizes/font_size = 16
+text = "x 30 /"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Slot"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.972549, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 16
+text = "x 30 /"
 horizontal_alignment = 1
 vertical_alignment = 1

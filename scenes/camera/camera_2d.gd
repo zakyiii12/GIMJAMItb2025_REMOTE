@@ -5,7 +5,7 @@ extends Camera2D
 @export var min_zoom = 0.3  # camera won't zoom closer than this
 @export var max_zoom = 0.8  # camera won't zoom farther than this
 @export var margin = Vector2(500, 200)  # include some buffer area around targets
-@export var camera_offset = Vector2(0, -10)
+@export var camera_offset = Vector2(0, -17)
 
 @export var targets : Array[CharacterBody2D] = []  # Array of targets to be tracked.
 
@@ -72,3 +72,6 @@ func shake():
 
 func small_shake():
 	add_trauma(0.2)
+
+func custom_shake(shake_intensity : float):
+	add_trauma(shake_intensity)

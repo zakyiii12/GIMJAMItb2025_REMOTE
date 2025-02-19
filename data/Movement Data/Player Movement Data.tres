@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_hmys2")
 max_speed = 0
-acceleration = 0
+acceleration = 5
 friction = 0
 gravity_scale = 0.0
 jump_strength = 0

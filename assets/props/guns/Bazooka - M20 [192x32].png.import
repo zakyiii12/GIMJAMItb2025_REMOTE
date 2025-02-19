@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6cxxi2kvj03y"
-path="res://.godot/imported/Bullet.png-64b254c82c108b38b32740d95e5a5445.ctex"
+uid="uid://xxcmpl3m8ge0"
+path="res://.godot/imported/Bazooka - M20 [192x32].png-46688550c2b0bf18ac3cb871bb2166e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/props/bullets/Bullet.png"
-dest_files=["res://.godot/imported/Bullet.png-64b254c82c108b38b32740d95e5a5445.ctex"]
+source_file="res://assets/props/guns/Bazooka - M20 [192x32].png"
+dest_files=["res://.godot/imported/Bazooka - M20 [192x32].png-46688550c2b0bf18ac3cb871bb2166e3.ctex"]
 
 [params]
 

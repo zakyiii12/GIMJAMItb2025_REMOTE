@@ -28,13 +28,18 @@ func knockback(vector):
 	velocity = velocity.move_toward(vector * movement_data.knockback_force, movement_data.acceleration)
 
 func _on_hurtbox_area_entered(area):
+	set_deferred("monitoring", false) 
 	if not area.is_in_group("Bat"):
 		knockback(area.knockback_vector)
 		hit_animator.play("Hit")
 		update_health_bar()
+
 		if stats.health <= 0:
-			state_machine.call_deferred("transition_to", "Death")
-			health_bar.visible = false
+			call_deferred("_handle_death")  
+
+func _handle_death():
+	state_machine.transition_to("Death")  
+	health_bar.visible = false
 
 func update_health_bar():
 	health_bar.value = stats.health
