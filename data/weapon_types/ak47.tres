@@ -10,6 +10,7 @@
 [resource]
 script = ExtResource("1_ro2w1")
 weapon_type = 2
+weapon_name = "Ak47"
 damage = 2
 fire_rate = 0.1
 reload_time = 2.5

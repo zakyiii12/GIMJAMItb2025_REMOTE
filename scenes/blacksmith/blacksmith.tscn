@@ -71,6 +71,7 @@ animations = [{
 radius = 94.2603
 
 [node name="Blacksmith" type="Area2D"]
+collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_nc8ky")
 

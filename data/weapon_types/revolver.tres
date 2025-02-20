@@ -10,6 +10,7 @@
 [resource]
 script = ExtResource("3_wi4uw")
 weapon_type = 1
+weapon_name = "Revolver"
 damage = 1
 fire_rate = 0.4
 reload_time = 1.0

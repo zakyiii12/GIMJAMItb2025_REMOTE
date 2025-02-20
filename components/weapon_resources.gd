@@ -10,6 +10,7 @@ enum Weapons {
 }
 
 @export var weapon_type: Weapons
+@export var weapon_name: String
 @export var damage: int = 10
 @export var fire_rate: float = 0.5
 @export var reload_time: float = 1.0

@@ -28,7 +28,6 @@ func knockback(vector):
 	velocity = velocity.move_toward(vector * movement_data.knockback_force, movement_data.acceleration)
 
 func _on_hurtbox_area_entered(area):
-	set_deferred("monitoring", false) 
 	if not area.is_in_group("Bat"):
 		knockback(area.knockback_vector)
 		hit_animator.play("Hit")

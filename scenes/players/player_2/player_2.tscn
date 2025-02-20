@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d0mk5dq3um0pf" path="res://assets/placeholder/characters/idle/satiro-Sheet v1.1.png" id="6_r0bcx"]
 [ext_resource type="Script" path="res://scenes/players/player_controller.gd" id="7_wuvy2"]
 [ext_resource type="Resource" uid="uid://2k75k8pe1jkj" path="res://data/player_input/player_2_input.tres" id="8_g2j63"]
-[ext_resource type="PackedScene" uid="uid://2b2xfq1mesyu" path="res://scenes/ui/bullet_ui.tscn" id="10_a54r8"]
-[ext_resource type="PackedScene" uid="uid://gjbo06qhflpe" path="res://scenes/ui/health_bar.tscn" id="11_h40up"]
+[ext_resource type="PackedScene" uid="uid://2b2xfq1mesyu" path="res://scenes/ui/Player/bullet_ui.tscn" id="10_a54r8"]
+[ext_resource type="PackedScene" uid="uid://gjbo06qhflpe" path="res://scenes/ui/Player/health_bar.tscn" id="11_h40up"]
 [ext_resource type="Script" path="res://components/weapon_manager.gd" id="12_rcv8n"]
 [ext_resource type="Script" path="res://components/pushing_object_component.gd" id="13_an6ad"]
 

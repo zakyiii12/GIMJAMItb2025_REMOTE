@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://jdckqr87wdid"]
+
+[ext_resource type="Script" path="res://scenes/ui/Shop/slot.gd" id="1_a3wej"]
+
+[node name="Slot" type="VBoxContainer"]
+offset_right = 67.0
+offset_bottom = 27.0
+script = ExtResource("1_a3wej")
+
+[node name="SlotImg" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Revolver"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -113,14 +113,14 @@ radius = 58.0022
 [sub_resource type="Gradient" id="Gradient_s1rbn"]
 colors = PackedColorArray(0.0742188, 0.0742188, 0.0742188, 1, 0, 0, 0, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_av3g5"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jc0f6"]
 gradient = SubResource("Gradient_s1rbn")
 
 [sub_resource type="Curve" id="Curve_7ixp1"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0843374, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_yo8a2"]
+[sub_resource type="CurveTexture" id="CurveTexture_0ia1l"]
 curve = SubResource("Curve_7ixp1")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_acofj"]
@@ -137,8 +137,8 @@ angular_velocity_min = -720.0
 angular_velocity_max = 720.0
 gravity = Vector3(0, 0, 0)
 scale_max = 2.0
-scale_curve = SubResource("CurveTexture_yo8a2")
-color_ramp = SubResource("GradientTexture1D_av3g5")
+scale_curve = SubResource("CurveTexture_0ia1l")
+color_ramp = SubResource("GradientTexture1D_jc0f6")
 
 [sub_resource type="Animation" id="Animation_wvfhd"]
 resource_name = "Hit"
@@ -155,18 +155,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [true, false, true, false, true, false, true, false]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Hurtbox:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
 
 [sub_resource type="Animation" id="Animation_grxi7"]
 resource_name = "Normal"
@@ -182,18 +170,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Hurtbox:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_gaykw"]
@@ -244,7 +220,6 @@ rotation = 1.5708
 shape = SubResource("CircleShape2D_18xow")
 
 [node name="Hurtbox" parent="." instance=ExtResource("4_x45n5")]
-monitoring = false
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 visible = false
@@ -281,6 +256,7 @@ max_value = 3.0
 value = 3.0
 texture_under = ExtResource("15_g6ng0")
 texture_progress = ExtResource("16_5fo33")
+metadata/_edit_use_anchors_ = true
 
 [node name="HealthBarTimer" type="Timer" parent="HealthBar"]
 process_callback = 0

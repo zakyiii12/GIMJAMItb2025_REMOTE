@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2b2xfq1mesyu"]
 
-[ext_resource type="Script" path="res://scenes/ui/bullet_ui.gd" id="1_uk8y2"]
+[ext_resource type="Script" path="res://scenes/ui/Player/bullet_ui.gd" id="1_uk8y2"]
 
 [node name="BulletUI" type="Control"]
 layout_mode = 3

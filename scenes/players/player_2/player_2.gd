@@ -114,7 +114,6 @@ func shoot():
 	weapon_manager.can_shoot = false
 	weapon_manager.shoot_timer.start(current_weapon.fire_rate)
 
-
 func small_shake():
 	health_bar.visible = false
 	camera.small_shake()
@@ -139,7 +138,9 @@ func animate(input_vector):
 		else:
 				animator.play("Jump")
 
-func _on_hurtbox_area_entered(_area):
+func _on_hurtbox_area_entered(area):
+	if area.is_in_group("Object"):
+		return
 	hit_animator.play("Hit")
 	health_bar.visible = true
 	EventManager.update_health_ui.emit()
