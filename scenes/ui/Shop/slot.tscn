@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://jdckqr87wdid"]
+[gd_scene load_steps=3 format=3 uid="uid://jdckqr87wdid"]
 
 [ext_resource type="Script" path="res://scenes/ui/Shop/slot.gd" id="1_a3wej"]
+[ext_resource type="Texture2D" uid="uid://qs8ba0cee5hv" path="res://data/weapon_sprites/revolver.tres" id="2_hqket"]
 
 [node name="Slot" type="VBoxContainer"]
 offset_right = 67.0
@@ -10,11 +11,18 @@ script = ExtResource("1_a3wej")
 [node name="SlotImg" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+texture = ExtResource("2_hqket")
 
 [node name="SlotLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Revolver"
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.756863, 0.819608, 0, 1)
+theme_override_constants/outline_size = 3
+text = "2 Gold"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

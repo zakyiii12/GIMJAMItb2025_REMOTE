@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cdn1gxgg37hbm"]
+[gd_scene load_steps=23 format=3 uid="uid://cdn1gxgg37hbm"]
 
 [ext_resource type="Texture2D" uid="uid://r2ic3jvqqmxw" path="res://assets/coin/coin1_16x16.png" id="1_6blt0"]
 [ext_resource type="Script" path="res://components/collectible_component.gd" id="2_io7kb"]
@@ -119,6 +119,63 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_jj3mo"]
 radius = 7.07107
 
+[sub_resource type="Animation" id="Animation_3pr7h"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0drph"]
+resource_name = "coin_spawn"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.6)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e0nds"]
+_data = {
+"RESET": SubResource("Animation_3pr7h"),
+"coin_spawn": SubResource("Animation_0drph")
+}
+
 [node name="Coin" type="Area2D" groups=["Object"]]
 collision_layer = 8
 collision_mask = 2
@@ -131,5 +188,11 @@ sprite_frames = SubResource("SpriteFrames_oq0bi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_jj3mo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e0nds")
+}
+autoplay = "coin_spawn"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

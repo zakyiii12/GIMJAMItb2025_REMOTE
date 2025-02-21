@@ -15,3 +15,4 @@ func collect(player : CharacterBody2D):
 	collision_shape_2d.set_deferred("disabled", true)
 	animated_sprite_2d.visible = false
 	queue_free()
+	EventManager.coin_collected += 1

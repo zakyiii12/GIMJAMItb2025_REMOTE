@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dj71vwa68g58b"]
+[gd_scene load_steps=19 format=4 uid="uid://dj71vwa68g58b"]
 
 [ext_resource type="Texture2D" uid="uid://crutw1molblkp" path="res://assets/placeholder/tiles/placeholder_tiles.png" id="1_0qosi"]
 [ext_resource type="Texture2D" uid="uid://nqoraehdx0f1" path="res://assets/placeholder/tiles/ground-tileset.png" id="2_e4bri"]
@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://o01l41aoaxp0" path="res://scenes/players/player_2/player_2.tscn" id="7_e1k31"]
 [ext_resource type="PackedScene" uid="uid://dea3fckgctayi" path="res://scenes/props/boxs/box.tscn" id="8_r4rsh"]
 [ext_resource type="PackedScene" uid="uid://b7fn277q5bl8n" path="res://scenes/blacksmith/blacksmith.tscn" id="9_uko1j"]
-[ext_resource type="PackedScene" uid="uid://cdn1gxgg37hbm" path="res://scenes/collectible/coin/coin.tscn" id="11_y4c03"]
 [ext_resource type="PackedScene" uid="uid://cn2p0idmevi61" path="res://scenes/ui/Player/player_weapon_ui.tscn" id="12_ihmuk"]
+[ext_resource type="PackedScene" uid="uid://j3mem3t2jl00" path="res://scenes/ui/Player/coin_collected.tscn" id="12_lvqvy"]
 [ext_resource type="PackedScene" uid="uid://unqk54sa53p8" path="res://scenes/ui/Shop/shop.tscn" id="12_v0a64"]
+[ext_resource type="PackedScene" uid="uid://cgu3tbtfpdb2" path="res://scenes/ui/Inventory/inventory_list.tscn" id="13_t21lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyh2j"]
 texture = ExtResource("1_0qosi")
@@ -121,9 +122,6 @@ position = Vector2(350, 293)
 Player = NodePath("../Player-2")
 shop = NodePath("../CanvasLayer/Shop")
 
-[node name="Coin" parent="." instance=ExtResource("11_y4c03")]
-position = Vector2(41, 155)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PlayerWeaponUI" parent="CanvasLayer" node_paths=PackedStringArray("Player") instance=ExtResource("12_ihmuk")]
@@ -133,3 +131,25 @@ Player = NodePath("../../Player-2")
 unique_name_in_owner = true
 visible = false
 Player = NodePath("../../Player-2")
+
+[node name="CoinCollected" parent="CanvasLayer" instance=ExtResource("12_lvqvy")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 80.0
+offset_bottom = 50.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="InventoryList" parent="CanvasLayer" node_paths=PackedStringArray("shop", "Player") instance=ExtResource("13_t21lp")]
+visible = false
+shop = NodePath("../Shop")
+Player = NodePath("../../Player-2")
+
+[node name="InventoryOpenBtn" type="Button" parent="CanvasLayer"]
+offset_top = 56.0
+offset_right = 129.0
+offset_bottom = 87.0
+text = "Open Inventory"
+
+[connection signal="pressed" from="CanvasLayer/InventoryOpenBtn" to="CanvasLayer/InventoryList" method="_on_inventory_open_btn_pressed"]

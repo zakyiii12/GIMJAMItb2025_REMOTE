@@ -48,9 +48,6 @@ func _ready():
 func _physics_process(delta):
 	var input_vector = Input.get_axis("left_p2","right_p2")
 	
-	if Input.is_action_just_pressed("shoot") and weapon_manager._can_shoot():
-		guns_animator.play("Shoot")
-		shoot()
 
 	if Input.is_action_just_pressed("reload") and !weapon_manager.is_reloading:
 		weapon_manager.current_weapon.max_ammo -= weapon_manager.current_weapon.magazine_size - weapon_manager.current_ammo
@@ -59,6 +56,12 @@ func _physics_process(delta):
 
 	move_and_slide()
 	animate(input_vector)
+
+func _unhandled_input(event: InputEvent) -> void:
+	print("shoot")
+	if event.is_action_pressed("shoot") and weapon_manager._can_shoot():
+		guns_animator.play("Shoot")
+		shoot()
 
 func apply_friction(delta):
 	velocity.x = move_toward(velocity.x, 0, movement_data.friction * delta)

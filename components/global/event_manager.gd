@@ -9,3 +9,4 @@ signal frame_freeze
 #Data
 var bullets_amount : int
 var max_bullets_amount: int
+var coin_collected : int

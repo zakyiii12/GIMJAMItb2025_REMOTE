@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgu3tbtfpdb2"]
+
+[ext_resource type="Texture2D" uid="uid://ctmmdmgf1t0o1" path="res://assets/ui/shop/Close.png" id="2_ox8my"]
+[ext_resource type="Script" path="res://scenes/ui/Inventory/inventory.gd" id="2_y6j4q"]
+
+[node name="Inventory" type="ItemList"]
+process_mode = 3
+custom_minimum_size = Vector2(400, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+allow_rmb_select = true
+allow_search = false
+auto_height = true
+max_columns = 4
+same_column_width = true
+fixed_column_width = 55
+icon_mode = 0
+fixed_icon_size = Vector2i(50, 50)
+script = ExtResource("2_y6j4q")
+
+[node name="CloseInvBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 3.0
+offset_right = 396.0
+offset_bottom = 28.0
+texture_normal = ExtResource("2_ox8my")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="item_clicked" from="." to="." method="_on_item_clicked"]
+[connection signal="pressed" from="CloseInvBtn" to="." method="_on_close_inv_btn_pressed"]

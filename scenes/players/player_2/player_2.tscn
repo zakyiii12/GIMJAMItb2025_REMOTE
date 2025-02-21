@@ -424,7 +424,7 @@ rotation = -0.0257374
 [node name="Pistol" type="Sprite2D" parent="Hand/Pivot"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_dbnn4")
-position = Vector2(10, 5)
+position = Vector2(12, 5)
 scale = Vector2(0.4, 0.4)
 
 [node name="PistolBulletMarker" type="Marker2D" parent="Hand/Pivot/Pistol"]
